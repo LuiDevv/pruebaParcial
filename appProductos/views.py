@@ -41,14 +41,32 @@ def privacy_policy(request):
     return render(request, 'sobre.html')
 
 # Vista para la página de contacto
+from django import forms
+
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from .forms import ContactForm
+
 def contact(request):
     if request.method == 'POST':
-        subject = request.POST['subject']
-        message = request.POST['message']
-        from_email = request.POST['email']
-        send_mail(subject, message, from_email, ['your_email@example.com'])
-        return HttpResponse('Correo enviado con éxito')
-    return render(request, 'contact.html')
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            nombre = form.cleaned_data['nombre']
+            email = form.cleaned_data['email']
+            mensaje = form.cleaned_data['mensaje']
+
+            send_mail(
+                subject=f'Contacto desde {nombre}',
+                message=mensaje,
+                from_email=email,
+                recipient_list=['destinatario@example.com'],  # Cambia esto por tu dirección de correo
+                fail_silently=False,
+            )
+            return redirect('contact_success')  # Redirige a una página de éxito después de enviar
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
+
 
 # Vista personalizada para el inicio de sesión
 class CustomLoginView(LoginView):
