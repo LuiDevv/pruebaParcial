@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-i7-(&*q1jpr!h6(+q=!*_wc*)l9)^7difs+*p@$pyyqltnzd9n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['*']
+DEBUG = True
+ALLOWED_HOSTS = []
 
 
 
@@ -118,10 +118,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-#STATICFILES_DIRS = [
-    #os.path.join(BASE_DIR, 'static'),  # Static files in the 'static' directory at the project level
-    # You can add more directories here if you have multiple locations for static files
-#]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Static files in the 'static' directory at the project level
+     #You can add more directories here if you have multiple locations for static files
+]
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 # STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") 
@@ -136,5 +136,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGIN_REDIRECT_URL = '/'  
+LOGIN_REDIRECT_URL = '/index'  
+
+LOGIN_URL = '/login'  
+
 

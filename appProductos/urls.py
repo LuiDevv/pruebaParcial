@@ -1,23 +1,12 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
-from .views import CustomLoginView
-
-
+from .views import CustomLoginView, IndexView
 
 urlpatterns = [
-    #path('Productos/', views.Productos, name='Productos'),
-    path('productos/', views.Productos, name='productos'),
-    
-    path('index/', views.index, name='index'), 
-
-    path('test/', views.test),
-
-    path('', CustomLoginView.as_view(), name='login'),
-    
-    path('index/', views.index, name='index')
-    
+    path('login/', CustomLoginView.as_view(), name='login'),  # Página de inicio de sesión
+    path('', IndexView.as_view(), name='index'),  # Página principal (index)
+    path('productos/', views.productos, name='productos'),
+    path('contact/', views.contact, name='contact'),
+    path('sobre/', views.privacy_policy, name='sobre'),
+    # path('login/', CustomLoginView.as_view(), name='login'),  # Esta línea puede ser redundante
 ]
-
-
-
-

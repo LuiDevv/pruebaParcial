@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-
 </head>
 <body>
-    <h1>Productos de la tienda</h1>
+    <h1>Productos de Porsche</h1>
     <ul>
         {% for x in misProductos %}
-        <li>{{ x.codigoProducto }} - {{x.descripcionProducto}}</li>
+        <li>{{ x.codigoProducto }} - {{ x.descripcionProducto }}</li>
+        {% empty %}
+        <li>No hay productos disponibles.</li>
         {% endfor %}
     </ul>
-    
 </body>
 </html>

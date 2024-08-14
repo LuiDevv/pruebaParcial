@@ -2,10 +2,15 @@ from django.db import models
 
 # Create your models here.
 
+from django.db import models
+
 class Producto(models.Model):
-    codigoProducto = models.IntegerField()
+    codigoProducto = models.CharField(max_length=100)
     descripcionProducto = models.CharField(max_length=255)
-    estatus = models.BooleanField()
+
+    def __str__(self):
+        return f"{self.codigoProducto} - {self.descripcionProducto}"
+
 
 
 class Article(models.Model):
