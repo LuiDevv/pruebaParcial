@@ -9,6 +9,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="icon" href="{% static 'favicon.png' %}"> 
+    
+    
 </head>
 <body>
     {% include 'header.html' %}
@@ -16,34 +19,28 @@
     {% include 'navbar.html' %}
 
     <!-- Sección Sobre Nosotros -->
-     <section id="sobre-nosotros">
-        <div class="container mt-5">
-            <h1>Sobre Nosotros</h1>
-            <p>
-                Bienvenido a nuestra tienda Porsche, donde la pasión por la excelencia automotriz y el lujo se unen. 
-                Desde nuestra fundación, nos hemos comprometido a ofrecer la mejor selección de vehículos Porsche, 
-                accesorios originales, y un servicio al cliente excepcional. Creemos que cada Porsche es más que un auto; 
-                es una declaración de estilo, rendimiento, y sofisticación.
-            </p>
-            <p>
-                Nuestra misión es proporcionar a nuestros clientes una experiencia de compra inigualable, 
-                que refleje los altos estándares de la marca Porsche. Nos enorgullece ser parte de la comunidad de entusiastas 
-                de Porsche y esperamos ayudarte a encontrar el vehículo de tus sueños.
-            </p>
-            <h2>Nuestro Equipo</h2>
-            <p>
-                Contamos con un equipo de profesionales altamente capacitados y apasionados por el mundo automotriz. 
-                Desde consultores de ventas hasta técnicos de servicio, cada miembro de nuestro equipo está dedicado a 
-                ofrecerte la mejor experiencia posible.
-            </p>
-        </div>
+    <section id="sobre-nosotros">
+        <div class="container">
+            <h1 style="color: #e9ecef;" class="section-title">Sobre Nosotros</h1>
+            <div class="section-content">
+                <p>
+                    Bienvenido a nuestra tienda Porsche, donde la pasión por la excelencia automotriz y el lujo se unen. Desde nuestra fundación, nos hemos comprometido a ofrecer la mejor selección de vehículos Porsche, accesorios originales, y un servicio al cliente excepcional. Creemos que cada Porsche es más que un auto; es una declaración de estilo, rendimiento, y sofisticación.
+                </p>
+                <p>
+                    Nuestra misión es proporcionar a nuestros clientes una experiencia de compra inigualable, que refleje los altos estándares de la marca Porsche. Nos enorgullece ser parte de la comunidad de entusiastas de Porsche y esperamos ayudarte a encontrar el vehículo de tus sueños.
+                </p>
+                <h2>Nuestro Equipo</h2>
+                <p>
+                    Contamos con un equipo de profesionales altamente capacitados y apasionados por el mundo automotriz. Desde consultores de ventas hasta técnicos de servicio, cada miembro de nuestro equipo está dedicado a ofrecerte la mejor experiencia posible.
+                </p>
 
-        <!-- Políticas de Privacidad -->
-        <div class="container mt-5">
+            </div>
+
+        </div>
+        <section style="color: #e9ecef;" id="politicas-privacidad" class="container mt-5 privacy-policy">
             <h2>Políticas de Privacidad</h2>
             <p>
-                En nuestra tienda Porsche, valoramos tu privacidad y estamos comprometidos con proteger tus datos personales. 
-                A continuación, se detallan nuestras políticas de privacidad:
+                En nuestra tienda Porsche, valoramos tu privacidad y estamos comprometidos con proteger tus datos personales. A continuación, se detallan nuestras políticas de privacidad:
             </p>
             <ul>
                 <li><strong>Recolección de Información:</strong> Solo recolectamos información personal cuando es necesario para proporcionar nuestros servicios, como cuando realizas una compra o te registras en nuestro sitio web.</li>
@@ -53,11 +50,12 @@
                 <li><strong>Tus Derechos:</strong> Tienes el derecho de acceder, corregir, o eliminar tu información personal almacenada en nuestra tienda. Puedes contactarnos en cualquier momento para ejercer estos derechos.</li>
             </ul>
             <p>
-                Si tienes alguna pregunta o inquietud sobre nuestras políticas de privacidad, no dudes en ponerte en contacto con nosotros. 
-                Estamos aquí para ayudarte y garantizar que tu experiencia con nosotros sea segura y satisfactoria.
+                Si tienes alguna pregunta o inquietud sobre nuestras políticas de privacidad, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte y garantizar que tu experiencia con nosotros sea segura y satisfactoria.
             </p>
-        </div>
+        </section>
     </section>
+   
+    {% include 'footer.html' %}
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

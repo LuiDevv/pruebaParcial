@@ -10,6 +10,24 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="icon" href="{% static 'favicon.png' %}"> 
+    <style>
+        .discover-item {
+            position: relative;
+            overflow: hidden;
+        }
+        .discover-item img {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .discover-item:hover img {
+            transform: scale(1.1);
+        }
+        .discover-item iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+        }
+    </style>
 </head>
 <body>
     {% include 'header.html' %}
@@ -108,9 +126,37 @@
             </div>
         </div>
         <br>
+        <hr>
+        <div class="container mt-5">
+            <h2  class="text-center mb-4" style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Descubre Porsche</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4 discover-item">
+                    <a href="https://www.porsche.com/911" target="_blank">
+                        <img src="{% static 'dis1.jpg' %}" class="img-fluid" alt="Descubre Porsche 1">
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4 discover-item">
+                    <a href="https://www.porsche.com/cayenne" target="_blank">
+                        <img src="{% static 'dis2.jpg' %}" class="img-fluid" alt="Descubre Porsche 2">
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4 discover-item">
+                    <a href="https://www.porsche.com/taycan" target="_blank">
+                        <img src="{% static 'dis3.jpg' %}" class="img-fluid" alt="Descubre Porsche 3">
+                    </a>
+                </div>
+                <div class="col-md-12">
+                    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/2sTZB1Dc7v4?si=1If9isMHXwnB7RVu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+                </div>
+            </div>
+        </div>
+        <br>
         <!-- Botón para volver al inicio de sesión -->
-        <center><a href="{% url 'login' %}" class="btn btn-primary">Volver al inicio de sesión</a></center>
+        <center><a style="background-color: black; border-color: tomato;" href="{% url 'login' %}" class="btn btn-primary">Volver al inicio de sesión</a></center>
     </div>
+
+    
+    {% include 'footer.html' %}
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

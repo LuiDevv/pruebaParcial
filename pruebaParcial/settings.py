@@ -141,3 +141,10 @@ LOGIN_REDIRECT_URL = '/index/'
 LOGIN_URL = '/login/'  
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Cambia esto al servidor SMTP que uses
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'tavarezluis2055@gmail.com'  # Tu dirección de correo electrónico
+EMAIL_HOST_PASSWORD = 'lalejandro541'  # Tu contraseña o contraseña de aplicación
+
