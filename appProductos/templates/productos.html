@@ -22,87 +22,33 @@
         <h1 style="color: white; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" class="text-center mb-4">Productos de Porsche</h1>
         
         <!-- Primer Apartado -->
+        {% for producto in productos %}
         <div class="row product mb-5">
             <div class="col-md-6">
-                <img src="{% static 'porsche-911.png' %}" alt="Porsche 911" class="img-fluid">
+                <img src="{{ producto.image.url }}" alt="{{ producto.title }}" class="img-fluid">
             </div>
             <div class="col-md-6 d-flex flex-column justify-content-center">
-                <h2>Porsche 911</h2>
-                <p>El Porsche 911 es un ícono atemporal en el mundo automotriz. Con su diseño inconfundible y un rendimiento excepcional, el 911 es la combinación perfecta de elegancia y poder. Equipado con un motor bóxer de 6 cilindros, es capaz de acelerar de 0 a 100 km/h en menos de 4 segundos.</p>
-                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#info911" aria-expanded="false" aria-controls="info911">
+                <h2>{{ producto.title }}</h2>
+                <p>{{ producto.description }}</p>
+                <button 
+                    class="btn btn-info" 
+                    type="button" 
+                    data-toggle="collapse" 
+                    data-target="#info{{ forloop.counter0 }}" 
+                    aria-expanded="false" 
+                    aria-controls="info911"
+                >
                     Más Información
                 </button>
-                <div class="collapse" id="info911">
+                <div class="collapse" id="info{{ forloop.counter0 }}">
                     <div class="card card-body mt-2">
-                        <p><strong>Precio:</strong> $100,000</p>
-                        <p><strong>Año:</strong> 2023</p>
+                        <p><strong>Precio:</strong> ${{ producto.price }}</p>
+                        <p><strong>Año:</strong> {{ producto.year }}</p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Segundo Apartado -->
-        <div class="row product mb-5">
-            <div class="col-md-6 order-md-2">
-                <img src="{% static 'porsche-cayenne.png' %}" alt="Porsche Cayenne" class="img-fluid">
-            </div>
-            <div class="col-md-6 order-md-1 d-flex flex-column justify-content-center">
-                <h2>Porsche Cayenne</h2>
-                <p>El Porsche Cayenne es la SUV que redefine el lujo y el rendimiento. Con espacio para toda la familia y una conducción dinámica, el Cayenne ofrece la versatilidad que necesitas sin sacrificar el estilo. Con múltiples opciones de motorización, incluyendo híbridos enchufables, el Cayenne es tan eficiente como potente.</p>
-                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#infoCayenne" aria-expanded="false" aria-controls="infoCayenne">
-                    Más Información
-                </button>
-                <div class="collapse" id="infoCayenne">
-                    <div class="card card-body mt-2">
-                        <p><strong>Precio:</strong> $85,000</p>
-                        <p><strong>Año:</strong> 2022</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tercer Apartado -->
-        <div class="row product mb-5">
-            <div class="col-md-6">
-                <img src="{% static 'porsche-taycan.png' %}" alt="Porsche Taycan" class="img-fluid">
-            </div>
-            <div class="col-md-6 d-flex flex-column justify-content-center">
-                <h2>Porsche Taycan</h2>
-                <p>El Porsche Taycan marca el comienzo de una nueva era para Porsche: la era eléctrica. Con un diseño futurista y tecnología avanzada, el Taycan ofrece una experiencia de conducción sin igual. Con una aceleración instantánea y un alcance impresionante, este automóvil eléctrico es la prueba de que el rendimiento y la sostenibilidad pueden ir de la mano.</p>
-                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#infoTaycan" aria-expanded="false" aria-controls="infoTaycan">
-                    Más Información
-                </button>
-                <div class="collapse" id="infoTaycan">
-                    <div class="card card-body mt-2">
-                        <p><strong>Precio:</strong> $120,000</p>
-                        <p><strong>Año:</strong> 2024</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Cuarto Apartado (Nuevo) -->
-        <div class="row product mb-5">
-            <div class="col-md-6">
-                <img src="{% static 'porsche-gt.png' %}" alt="Porsche GT" class="img-fluid">
-            </div>
-            <div class="col-md-6 d-flex flex-column justify-content-center">
-                <h2>Porsche GT</h2>
-                <p>El Porsche GT es la esencia del rendimiento puro y la ingeniería de precisión. Con un motor potente y una aerodinámica optimizada, el GT ofrece una experiencia de conducción inigualable en la pista y en la carretera. Su diseño agresivo y sus características de alta tecnología lo convierten en uno de los modelos más deseados por los entusiastas de Porsche.</p>
-                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#infoGT" aria-expanded="false" aria-controls="infoGT">
-                    Más Información
-                </button>
-                <div class="collapse" id="infoGT">
-                    <div class="card card-body mt-2">
-                        <p><strong>Precio:</strong> $150,000</p>
-                        <p><strong>Año:</strong> 2023</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
+        {% endfor %}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
