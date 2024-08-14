@@ -1,0 +1,5 @@
+venv
+appProductos/migrations
+appProductos/__pycache__
+pruebaParcial/__pycache__
+db.sqlite3
