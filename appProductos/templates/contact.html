@@ -1,23 +1,58 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}"></head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <body>
-    <h1>Contacto</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="email">Correo:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="subject">Asunto:</label>
-        <input type="text" id="subject" name="subject" required>
-        <label for="message">Mensaje:</label>
-        <textarea id="message" name="message" required></textarea>
-        <button type="submit">Enviar</button>
-    </form>
-    <div class="social-media">
-        
+    {% include 'header.html' %}
+    {% include 'navbar.html' %}
+    
+    <div class="container">
+        <center>
+            <h1 style="color: #fff; margin-top: 30px;">Contacto</h1>
+            <form method="post" class="mb-5">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="email">Correo:</label>
+                    <input style="padding-left: 30px;" type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Asunto:</label>
+                    <input type="text" id="subject" name="subject" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </center>
+
+        <div class="social-media text-center">
+            <h3 style="color: #fff; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Síguenos en nuestras redes sociales</h3>
+            <a href="https://www.facebook.com/porsche" target="_blank">
+                <i style="color: #fff;" class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="https://www.twitter.com/porsche" target="_blank">
+                <i style="color: #fff;" class="fab fa-twitter fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com/porsche" target="_blank">
+                <i style="color: #fff;" class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/porsche" target="_blank">
+                <i style="color: #fff;" class="fab fa-linkedin fa-2x"></i>
+            </a>
+        </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

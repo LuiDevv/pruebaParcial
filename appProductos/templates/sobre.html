@@ -11,71 +11,53 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
+    {% include 'header.html' %}
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Mi Sitio</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Sobre Nosotros <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    {% include 'navbar.html' %}
 
     <!-- Sección Sobre Nosotros -->
-    <div class="container mt-5">
-        <h1>Sobre Nosotros</h1>
-        <p>
-            Bienvenido a nuestra tienda Porsche, donde la pasión por la excelencia automotriz y el lujo se unen. 
-            Desde nuestra fundación, nos hemos comprometido a ofrecer la mejor selección de vehículos Porsche, 
-            accesorios originales, y un servicio al cliente excepcional. Creemos que cada Porsche es más que un auto; 
-            es una declaración de estilo, rendimiento, y sofisticación.
-        </p>
-        <p>
-            Nuestra misión es proporcionar a nuestros clientes una experiencia de compra inigualable, 
-            que refleje los altos estándares de la marca Porsche. Nos enorgullece ser parte de la comunidad de entusiastas 
-            de Porsche y esperamos ayudarte a encontrar el vehículo de tus sueños.
-        </p>
-        <h2>Nuestro Equipo</h2>
-        <p>
-            Contamos con un equipo de profesionales altamente capacitados y apasionados por el mundo automotriz. 
-            Desde consultores de ventas hasta técnicos de servicio, cada miembro de nuestro equipo está dedicado a 
-            ofrecerte la mejor experiencia posible.
-        </p>
-    </div>
+     <section id="sobre-nosotros">
+        <div class="container mt-5">
+            <h1>Sobre Nosotros</h1>
+            <p>
+                Bienvenido a nuestra tienda Porsche, donde la pasión por la excelencia automotriz y el lujo se unen. 
+                Desde nuestra fundación, nos hemos comprometido a ofrecer la mejor selección de vehículos Porsche, 
+                accesorios originales, y un servicio al cliente excepcional. Creemos que cada Porsche es más que un auto; 
+                es una declaración de estilo, rendimiento, y sofisticación.
+            </p>
+            <p>
+                Nuestra misión es proporcionar a nuestros clientes una experiencia de compra inigualable, 
+                que refleje los altos estándares de la marca Porsche. Nos enorgullece ser parte de la comunidad de entusiastas 
+                de Porsche y esperamos ayudarte a encontrar el vehículo de tus sueños.
+            </p>
+            <h2>Nuestro Equipo</h2>
+            <p>
+                Contamos con un equipo de profesionales altamente capacitados y apasionados por el mundo automotriz. 
+                Desde consultores de ventas hasta técnicos de servicio, cada miembro de nuestro equipo está dedicado a 
+                ofrecerte la mejor experiencia posible.
+            </p>
+        </div>
 
-    <!-- Políticas de Privacidad -->
-    <div class="container mt-5">
-        <h2>Políticas de Privacidad</h2>
-        <p>
-            En nuestra tienda Porsche, valoramos tu privacidad y estamos comprometidos con proteger tus datos personales. 
-            A continuación, se detallan nuestras políticas de privacidad:
-        </p>
-        <ul>
-            <li><strong>Recolección de Información:</strong> Solo recolectamos información personal cuando es necesario para proporcionar nuestros servicios, como cuando realizas una compra o te registras en nuestro sitio web.</li>
-            <li><strong>Uso de la Información:</strong> Utilizamos la información recolectada para mejorar tu experiencia de compra, procesar transacciones, y mantenerte informado sobre nuestras ofertas y servicios.</li>
-            <li><strong>Protección de Datos:</strong> Implementamos medidas de seguridad para proteger tu información personal de accesos no autorizados o alteraciones.</li>
-            <li><strong>Compartir Información:</strong> No compartimos tu información personal con terceros, excepto cuando es necesario para completar una transacción o cuando la ley lo exige.</li>
-            <li><strong>Tus Derechos:</strong> Tienes el derecho de acceder, corregir, o eliminar tu información personal almacenada en nuestra tienda. Puedes contactarnos en cualquier momento para ejercer estos derechos.</li>
-        </ul>
-        <p>
-            Si tienes alguna pregunta o inquietud sobre nuestras políticas de privacidad, no dudes en ponerte en contacto con nosotros. 
-            Estamos aquí para ayudarte y garantizar que tu experiencia con nosotros sea segura y satisfactoria.
-        </p>
-    </div>
+        <!-- Políticas de Privacidad -->
+        <div class="container mt-5">
+            <h2>Políticas de Privacidad</h2>
+            <p>
+                En nuestra tienda Porsche, valoramos tu privacidad y estamos comprometidos con proteger tus datos personales. 
+                A continuación, se detallan nuestras políticas de privacidad:
+            </p>
+            <ul>
+                <li><strong>Recolección de Información:</strong> Solo recolectamos información personal cuando es necesario para proporcionar nuestros servicios, como cuando realizas una compra o te registras en nuestro sitio web.</li>
+                <li><strong>Uso de la Información:</strong> Utilizamos la información recolectada para mejorar tu experiencia de compra, procesar transacciones, y mantenerte informado sobre nuestras ofertas y servicios.</li>
+                <li><strong>Protección de Datos:</strong> Implementamos medidas de seguridad para proteger tu información personal de accesos no autorizados o alteraciones.</li>
+                <li><strong>Compartir Información:</strong> No compartimos tu información personal con terceros, excepto cuando es necesario para completar una transacción o cuando la ley lo exige.</li>
+                <li><strong>Tus Derechos:</strong> Tienes el derecho de acceder, corregir, o eliminar tu información personal almacenada en nuestra tienda. Puedes contactarnos en cualquier momento para ejercer estos derechos.</li>
+            </ul>
+            <p>
+                Si tienes alguna pregunta o inquietud sobre nuestras políticas de privacidad, no dudes en ponerte en contacto con nosotros. 
+                Estamos aquí para ayudarte y garantizar que tu experiencia con nosotros sea segura y satisfactoria.
+            </p>
+        </div>
+    </section>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

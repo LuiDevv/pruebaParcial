@@ -38,7 +38,7 @@ def productos(request):
 
 # Vista para la política de privacidad
 def privacy_policy(request):
-    return render(request, 'privacy_policy.html')
+    return render(request, 'sobre.html')
 
 # Vista para la página de contacto
 def contact(request):
