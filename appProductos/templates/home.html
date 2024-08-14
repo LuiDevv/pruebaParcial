@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}"></head>
+<body>
+    <header>
+        <nav>
+           
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'privacy_policy' %}">Políticas de Privacidad</a></li>
+            <li><a href="{% url 'contact' %}">Contacto</a></li>
+            <li><a href="{% url 'articles_list' %}">Noticias</a></li>
+            <li><a href="{% url 'product_list' %}">Productos</a></li>
+        </ul>
+    <div class="social-media">
+            <a href="https://twitter.com/yourprofile" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://instagram.com/yourprofile" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://facebook.com/yourprofile" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/yourprofile" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+    </nav>
+
+        </nav>
+        {% include 'header.html' %}
+    </header>
+    <main>
+        
+    </main>
+    <footer>
+        <!-- Información de contacto, redes sociales, etc. -->
+    </footer>
+</body>
+</html>

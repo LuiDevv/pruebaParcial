@@ -1,6 +1,5 @@
 
-{% load static %}
-
+{% load 'static' %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página no encontrada</title>
     {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/error.css' %}">
-
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 
 
 
@@ -18,7 +16,7 @@
     <div class="container">
         <h1>404</h1>
         <p>Lo sentimos, la página que estás buscando no existe.</p>
-        <a href="/">Volver al inicio</a>
+        <a href="index/">Volver al inicio</a>
     </div>
 </body>
 </html>

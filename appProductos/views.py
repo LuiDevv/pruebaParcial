@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
 from .models import Producto
+from django.contrib.auth.views import LoginView
+from django.core.mail import send_mail
+from django.shortcuts import render
 
 
 def mostrar_template(request):
@@ -30,8 +33,38 @@ def index(request):
     return render(request, 'index.html')
 
 
-from django.conf.urls import handler404
-from django.shortcuts import render
+
+class CustomLoginView(LoginView):
+    template_name = 'login.html'
+    redirect_authenticated_user = True  
+    success_url = '/index/'  
+
+    def get_success_url(self):
+        return self.success_url
+    
+
+def home(request):
+    return render(request, 'home.html')
+
+
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html')
+
+
+def contact(request):
+    if request.method == 'POST':
+        subject = request.POST['subject']
+        message = request.POST['message']
+        from_email = request.POST['email']
+        send_mail(subject, message, from_email, ['your_email@example.com'])
+        return HttpResponse('Correo enviado con éxito')
+    return render(request, 'contact.html')
+
+
+# def articles_list(request):
+    articles = Article.objects.all()
+    return render(request, 'articles_list.html', {'articles': articles})
+
 
 def test(request):
     return render(request, '404.html')

@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal</title>
-    <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
     <h1>Bienvenido a la página principal</h1>
-    <img src="{% static 'images/prueba.png' %}" alt="Imagen principal">
+    <img src="{% static 'prueba.png' %}" alt="Imagen principal">
     {% include 'header.html' %}
     <h1>Contenido de la página principal</h1>
+    <a href="{% url 'login' %}">Volver al inicio de sesión</a>
+
 </body>
 </html>
