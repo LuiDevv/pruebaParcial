@@ -12,7 +12,7 @@ from .views import CustomLoginView, IndexView
 
 urlpatterns = [
     path('login/', views.login_view, name='login'),  # Página de inicio de sesión
-    path('register', views.register, name='register'),
+    path('register/', views.register, name='register'),
     path('index/', IndexView.as_view(), name='index'),  # Página principal (index)
     path('productos/', views.productos, name='productos'),
     path('contact/', views.contact, name='contact'),

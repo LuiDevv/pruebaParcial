@@ -35,15 +35,16 @@ def register(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
+        email = request.POST.get('email')
       
         print(username, password)
-        user = User.objects.create_user(username=username, password=password)
+        user = User.objects.create_user(username=username, password=password, email=email)
         user.save()
         login(request, user)
 
         return redirect('index')
 
-    return render(request, '404.html')
+    return render(request, 'register.html')
 
 
 
