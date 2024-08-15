@@ -11,12 +11,13 @@ from . import views
 from .views import CustomLoginView, IndexView
 
 urlpatterns = [
-    path('', CustomLoginView.as_view(), name='login'),  # Página de inicio de sesión
+    path('login/', views.login_view, name='login'),  # Página de inicio de sesión
+    path('register/', views.register, name='register'),
     path('index/', IndexView.as_view(), name='index'),  # Página principal (index)
     path('productos/', views.productos, name='productos'),
     path('contact/', views.contact, name='contact'),
     path('sobre/', views.privacy_policy, name='sobre'),
-    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', views.logout_view, name='logout'),
     path('contact-success/', TemplateView.as_view(template_name='contact_success.html'), name='contact_success'),  # Página de inicio de sesión (puede ser redundante si ya tienes la ruta en la URL vacía)
 ]
 

@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
+from django.contrib.auth import authenticate, login, logout
 from django.core.mail import send_mail
 from django.contrib.auth.views import LoginView
 from .models import Producto
@@ -12,19 +11,48 @@ from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
 
-class CustomLoginView(LoginView):
-    template_name = 'login.html'  # Asegúrate de que esta sea la plantilla correcta
-    success_url = reverse_lazy('index')  # Redirige a la página principal tras el inicio de sesión
+from .models import User
 
-    def form_valid(self, form):
-        # Aquí puedes añadir lógica adicional si es necesario
-        return super().form_valid(form)
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+        if user:
+            login(request, user)
+            return redirect('index')
+
+    return render(request, 'login.html')
+
+def logout_view(request):
+    logout(request)
+    
+    return redirect('login')
+
+
+def register(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        email = request.POST.get('email')
+      
+        print(username, password)
+        user = User.objects.create_user(username=username, password=password, email=email)
+        user.save()
+        login(request, user)
+
+        return redirect('index')
+
+    return render(request, 'register.html')
+
 
 
 @method_decorator(login_required, name='dispatch')
 class IndexView(TemplateView):
     template_name = 'index.html'
 
+@login_required
 def index(request):
     return render(request, 'index.html')
 
@@ -34,7 +62,7 @@ from .models import Producto  # Asegúrate de que este sea el modelo correcto
 
 def productos(request):
     productos = Producto.objects.all()  # Obtén todos los productos de la base de datos
-    return render(request, 'productos.html', {'misProductos': productos})
+    return render(request, 'productos.html', {'productos': productos})
 
 # Vista para la política de privacidad
 def privacy_policy(request):

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="icon" href="{% static 'favicon.png' %}">
+</head>
+<body>
+    <div class="login-container">
+        <img class="logo" src="{% static 'favicon.png' %}" alt="Favicon">
+        <h1>
+            <center><a href="{% url 'login' %}" class="text-decoration-none">Iniciar Sesión</a> | 
+            <a href="{% url 'register' %}" class="text-decoration-none">Registrarse</a></center>
+        </h1>
+        <br>
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <input placeholder="Nombre de usuario" name="username" type="text" required />
+            <input placeholder="Correo electrónico" type="email" name="email" required />
+            <input placeholder="Contraseña" type="password" name="password" required />
+            <br>
+            <br>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+    <br>
+    {% include 'footer.html' %}
+</body>
+</html>
